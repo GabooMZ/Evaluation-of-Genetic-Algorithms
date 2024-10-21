@@ -43,9 +43,9 @@ def execute_pygad_experiment(pygad_creator,
             log_message_info(f"PyGAD - {optimization_name}- Average best fitness: {-np.mean(best_fitness_list)}")
             log_message_info(
                 f"PyGAD - {optimization_name} - Average generations completed: {np.mean(generations_completed)}")
-    pygad_avg_fitness = f"PyGAD - {optimization_name}- Final average best fitness: {-np.mean(best_fitness_list)}"
+    pygad_avg_fitness = f"PyGAD - {optimization_name}- Final average best fitness: {-np.mean(best_fitness_list):.4f}"
     pygad_avg_generation_number = f"PyGAD - {optimization_name}- Final average generations completed: {np.mean(generations_completed)}"
-    pygad_avg_fitness_after_n_generations = f"PyGAD - {optimization_name}- Final average fitness after {number_of_generations} generations: {np.mean(fitness_per_generation)}"
+    pygad_avg_fitness_after_n_generations = f"PyGAD - {optimization_name}- Final average fitness after {number_of_generations} generations: {np.mean(fitness_per_generation):.4f}"
 
     log_message_info(pygad_avg_fitness)
     log_message_info(pygad_avg_generation_number)

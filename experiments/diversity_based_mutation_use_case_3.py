@@ -149,7 +149,7 @@ def execute_diversity_based_mutation_use_case_3():
                         gene_type=float,
                         gene_space=args_bounds,
                         fitness_func=fitness_func,
-                        mutation_percent_genes=[30, 15],
+                        mutation_percent_genes=[50, 15],
                         mutation_type="adaptive",
                         suppress_warnings=True,
                         keep_elitism=16,
@@ -165,21 +165,25 @@ def execute_diversity_based_mutation_use_case_3():
         log_message_info(r)
 
 
-if __name__ == "__main__":
-    args = []
-    i = 1
-    while True:
-        try:
-            args.append(sys.argv[i])
-            i += 1
-        except IndexError:
-            break
-    for a in args:
-        if a == "plot":
-            plot_fitness = True
-        else:
-            try:
-                num_runs = int(a)
-            except ValueError:
-                pass
-    execute_diversity_based_mutation_use_case_3()
+# if __name__ == "__main__":
+    # args = []
+    # i = 1
+    # while True:
+    #     try:
+    #         args.append(sys.argv[i])
+    #         i += 1
+    #     except IndexError:
+    #         break
+    # for a in args:
+    #     if a == "plot":
+    #         plot_fitness = True
+    #     else:
+    #         try:
+    #             num_runs = int(100)
+    #         except ValueError:
+    #             pass
+
+plot_fitness = True
+num_runs = int(200)
+execute_diversity_based_mutation_use_case_3()
+

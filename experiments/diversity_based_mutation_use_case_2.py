@@ -49,11 +49,7 @@ def complex_trig_func(args):
             math.pow(args[3], 2) +
             math.sqrt(args[4]) +
             math.cos(args[5]) -
-            (args[6] * math.sin(pow(args[6], 3)) + 1) +
-            math.sin(args[0]) / (math.sqrt(args[0]) / 3 +
-                                 (args[6] * math.sin(pow(args[6], 3)) + 1)) / math.sqrt(
-                args[4]) +
-            math.cos(args[5]))
+            (args[6] * math.sin(pow(args[6], 3)) + 1) + math.sin(args[0]) / (math.sqrt(args[0]) / 3 +(args[6] * math.sin(pow(args[6], 3)) + 1)) / math.sqrt(args[4]) + math.cos(args[5]))
 
 
 def diversity_based_mutation_use_case_2():
@@ -155,7 +151,7 @@ def diversity_based_mutation_use_case_2():
                         gene_type=float,
                         gene_space=args_bounds,
                         fitness_func=fitness_func,
-                        mutation_percent_genes=[30, 15],
+                        mutation_percent_genes=[50,30], # original [30,15]
                         mutation_type="adaptive",
                         suppress_warnings=True,
                         keep_elitism=16,
@@ -171,21 +167,25 @@ def diversity_based_mutation_use_case_2():
         log_message_info(r)
 
 
-if __name__ == "__main__":
-    args = []
-    i = 1
-    while True:
-        try:
-            args.append(sys.argv[i])
-            i += 1
-        except IndexError:
-            break
-    for a in args:
-        if a == "plot":
-            plot_fitness = True
-        else:
-            try:
-                num_runs = int(a)
-            except ValueError:
-                pass
-    diversity_based_mutation_use_case_2()
+# if __name__ == "__main__":
+    # args = []
+    # i = 1
+    # while True:
+    #     try:
+    #         args.append(sys.argv[i])
+    #         i += 1
+    #     except IndexError:
+    #         break
+    # for a in args:
+    #     if a == "plot":
+    #         plot_fitness = True
+    #     else:
+    #         try:
+    #             num_runs = int(100)
+    #         except ValueError:
+    #             pass
+
+plot_fitness = True
+num_runs = int(200)
+diversity_based_mutation_use_case_2()
+
